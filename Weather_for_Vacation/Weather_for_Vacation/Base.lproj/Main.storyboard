@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +14,105 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Weather_for_Vacation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rG7-FB-k7n">
+                                <rect key="frame" x="116" y="185" width="143" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="현재 위치를 선택하세요.">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GSa-xs-BCw"/>
+                                    <segue destination="2Gw-iK-nQe" kind="presentation" id="ILT-VY-pGQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="95.802098950524751"/>
+        </scene>
+        <!--Temperature View Controller-->
+        <scene sceneID="COy-2V-DVY">
+            <objects>
+                <viewController id="2Gw-iK-nQe" customClass="TemperatureViewController" customModule="Weather_for_Vacation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nCE-2y-bOK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="위치" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qff-fW-qYp">
+                                <rect key="frame" x="0.0" y="654.33333333333337" width="375" height="33.666666666666629"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="온도" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fjV-CY-8vd">
+                                <rect key="frame" x="124" y="391" width="126.33333333333331" height="87.333333333333314"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="73"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yFa-sX-RyH">
+                                <rect key="frame" x="0.0" y="44" width="375" height="297"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I20-KI-6gg">
+                                <rect key="frame" x="0.0" y="528.33333333333337" width="375" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QPb-iW-Nov">
+                                <rect key="frame" x="15" y="59" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="N6a-rA-6bw"/>
+                                    <constraint firstAttribute="height" constant="25" id="fDM-Vs-Uzr"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="1200px-Right-facing-Arrow-icon"/>
+                                <connections>
+                                    <action selector="dissmissButton:" destination="2Gw-iK-nQe" eventType="touchUpInside" id="wM5-jd-Qo8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fjV-CY-8vd" firstAttribute="centerX" secondItem="Xvc-cz-ggx" secondAttribute="centerX" id="FIE-mb-2LS"/>
+                            <constraint firstItem="qff-fW-qYp" firstAttribute="trailing" secondItem="Xvc-cz-ggx" secondAttribute="trailing" id="FzT-Sq-0sx"/>
+                            <constraint firstItem="QPb-iW-Nov" firstAttribute="leading" secondItem="Xvc-cz-ggx" secondAttribute="leading" constant="15" id="HAR-gt-rKq"/>
+                            <constraint firstItem="fjV-CY-8vd" firstAttribute="top" secondItem="yFa-sX-RyH" secondAttribute="bottom" constant="50" id="HYr-uT-bRj"/>
+                            <constraint firstItem="I20-KI-6gg" firstAttribute="leading" secondItem="Xvc-cz-ggx" secondAttribute="leading" id="SbB-nz-zI6"/>
+                            <constraint firstItem="Xvc-cz-ggx" firstAttribute="trailing" secondItem="yFa-sX-RyH" secondAttribute="trailing" id="U4G-TK-4zg"/>
+                            <constraint firstItem="QPb-iW-Nov" firstAttribute="top" secondItem="Xvc-cz-ggx" secondAttribute="top" constant="15" id="gha-Ee-0BE"/>
+                            <constraint firstItem="I20-KI-6gg" firstAttribute="trailing" secondItem="Xvc-cz-ggx" secondAttribute="trailing" id="hU9-GT-Nfv"/>
+                            <constraint firstItem="I20-KI-6gg" firstAttribute="top" secondItem="fjV-CY-8vd" secondAttribute="bottom" constant="50" id="hWD-x7-P1S"/>
+                            <constraint firstItem="Xvc-cz-ggx" firstAttribute="centerY" secondItem="yFa-sX-RyH" secondAttribute="bottom" constant="70" id="lTv-oM-8bb"/>
+                            <constraint firstItem="qff-fW-qYp" firstAttribute="leading" secondItem="Xvc-cz-ggx" secondAttribute="leading" id="mCN-2R-RMq"/>
+                            <constraint firstItem="yFa-sX-RyH" firstAttribute="leading" secondItem="Xvc-cz-ggx" secondAttribute="leading" id="nMQ-xy-76U"/>
+                            <constraint firstItem="yFa-sX-RyH" firstAttribute="top" secondItem="Xvc-cz-ggx" secondAttribute="top" id="p8B-EK-IIz"/>
+                            <constraint firstItem="Xvc-cz-ggx" firstAttribute="bottom" secondItem="qff-fW-qYp" secondAttribute="bottom" constant="90" id="qV3-X5-EAe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Xvc-cz-ggx"/>
+                    </view>
+                    <connections>
+                        <outlet property="locationLabel" destination="qff-fW-qYp" id="kbH-VB-fvh"/>
+                        <outlet property="temperatureLabel" destination="fjV-CY-8vd" id="4gj-gv-PiO"/>
+                        <outlet property="temperatureMinMaxLabel" destination="I20-KI-6gg" id="Uda-AR-Wah"/>
+                        <outlet property="weatherIconView" destination="yFa-sX-RyH" id="k5U-Ry-7xW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UDM-sV-Qr1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="888.79999999999995" y="95.320197044334975"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="1200px-Right-facing-Arrow-icon" width="1200" height="1200"/>
+    </resources>
 </document>
