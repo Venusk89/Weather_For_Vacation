@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2Gw-iK-nQe">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,11 +11,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Weather_for_Vacation" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController storyboardIdentifier="MainViewController" id="BYZ-38-t0r" customClass="MainViewController" customModule="Weather_for_Vacation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="MainView" id="8bC-Xf-vdC" customClass="MainView" customModule="Weather_for_Vacation" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -26,49 +26,30 @@
                                 <state key="normal" title="현재 위치를 선택하세요.">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
-                                <connections>
-                                    <action selector="button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GSa-xs-BCw"/>
-                                    <segue destination="2Gw-iK-nQe" kind="presentation" id="ILT-VY-pGQ"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outlet property="mainButton" destination="rG7-FB-k7n" id="PE3-sL-QP8"/>
+                        </connections>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="95.802098950524751"/>
+            <point key="canvasLocation" x="-127" y="95"/>
         </scene>
         <!--Temperature View Controller-->
         <scene sceneID="COy-2V-DVY">
             <objects>
                 <viewController id="2Gw-iK-nQe" customClass="TemperatureViewController" customModule="Weather_for_Vacation" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="nCE-2y-bOK">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="TemperatureView" id="nCE-2y-bOK" customClass="TemperatureView" customModule="Weather_for_Vacation" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="위치" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qff-fW-qYp">
-                                <rect key="frame" x="0.0" y="654.33333333333337" width="375" height="33.666666666666629"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="온도" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fjV-CY-8vd">
-                                <rect key="frame" x="124" y="391" width="126.33333333333331" height="87.333333333333314"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="73"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yFa-sX-RyH">
                                 <rect key="frame" x="0.0" y="44" width="375" height="297"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I20-KI-6gg">
-                                <rect key="frame" x="0.0" y="528.33333333333337" width="375" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QPb-iW-Nov">
                                 <rect key="frame" x="15" y="59" width="25" height="25"/>
                                 <constraints>
@@ -76,10 +57,25 @@
                                     <constraint firstAttribute="height" constant="25" id="fDM-Vs-Uzr"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="1200px-Right-facing-Arrow-icon"/>
-                                <connections>
-                                    <action selector="dissmissButton:" destination="2Gw-iK-nQe" eventType="touchUpInside" id="wM5-jd-Qo8"/>
-                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="TeTemperatureCurrentLabelmperatureLabel" text="온도" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fjV-CY-8vd" customClass="TemperatureCurrentLabel" customModule="Weather_for_Vacation" customModuleProvider="target">
+                                <rect key="frame" x="124" y="391" width="126.33333333333331" height="87.333333333333314"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="73"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I20-KI-6gg">
+                                <rect key="frame" x="0.0" y="528.33333333333337" width="375" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="위치" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qff-fW-qYp">
+                                <rect key="frame" x="0.0" y="654" width="375" height="33.666666666666629"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -99,12 +95,15 @@
                             <constraint firstItem="Xvc-cz-ggx" firstAttribute="bottom" secondItem="qff-fW-qYp" secondAttribute="bottom" constant="90" id="qV3-X5-EAe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Xvc-cz-ggx"/>
+                        <connections>
+                            <outlet property="backButton" destination="QPb-iW-Nov" id="dT9-Fo-3Ge"/>
+                            <outlet property="locationNameLabel" destination="qff-fW-qYp" id="brI-bj-3OV"/>
+                            <outlet property="temperatureMinMaxLabel" destination="I20-KI-6gg" id="Mvv-1b-hcu"/>
+                            <outlet property="weatherIconImageView" destination="yFa-sX-RyH" id="X2q-x6-npf"/>
+                        </connections>
                     </view>
                     <connections>
-                        <outlet property="locationLabel" destination="qff-fW-qYp" id="kbH-VB-fvh"/>
-                        <outlet property="temperatureLabel" destination="fjV-CY-8vd" id="4gj-gv-PiO"/>
-                        <outlet property="temperatureMinMaxLabel" destination="I20-KI-6gg" id="Uda-AR-Wah"/>
-                        <outlet property="weatherIconView" destination="yFa-sX-RyH" id="k5U-Ry-7xW"/>
+                        <outlet property="TemperatureCurrentLabel" destination="fjV-CY-8vd" id="VUy-NY-oPR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UDM-sV-Qr1" userLabel="First Responder" sceneMemberID="firstResponder"/>
