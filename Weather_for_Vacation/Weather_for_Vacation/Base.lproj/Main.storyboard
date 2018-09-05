@@ -47,7 +47,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yFa-sX-RyH">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="WeatherImageView" translatesAutoresizingMaskIntoConstraints="NO" id="yFa-sX-RyH" customClass="WeatherImageView" customModule="Weather_for_Vacation" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="375" height="297"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QPb-iW-Nov">
@@ -64,13 +64,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I20-KI-6gg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="TemperatureMinMaxLabel" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I20-KI-6gg" customClass="TemperatureMinMaxLabel" customModule="Weather_for_Vacation" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="528.33333333333337" width="375" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="위치" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qff-fW-qYp">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="위치" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qff-fW-qYp" customClass="LocationLabel" customModule="Weather_for_Vacation" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="654" width="375" height="33.666666666666629"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <nil key="textColor"/>
@@ -96,14 +96,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Xvc-cz-ggx"/>
                         <connections>
+                            <outlet property="WeatherImageView" destination="yFa-sX-RyH" id="2fA-Oi-TOx"/>
                             <outlet property="backButton" destination="QPb-iW-Nov" id="dT9-Fo-3Ge"/>
-                            <outlet property="locationNameLabel" destination="qff-fW-qYp" id="brI-bj-3OV"/>
-                            <outlet property="temperatureMinMaxLabel" destination="I20-KI-6gg" id="Mvv-1b-hcu"/>
-                            <outlet property="weatherIconImageView" destination="yFa-sX-RyH" id="X2q-x6-npf"/>
+                            <outlet property="locationLabel" destination="qff-fW-qYp" id="7Ba-aT-9id"/>
+                            <outlet property="temperatureCurrentLabel" destination="fjV-CY-8vd" id="zfh-CO-RzT"/>
+                            <outlet property="temperatureMinMaxLabel" destination="I20-KI-6gg" id="VyT-eO-1wi"/>
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="TemperatureCurrentLabel" destination="fjV-CY-8vd" id="VUy-NY-oPR"/>
+                        <outlet property="LocationLabel" destination="qff-fW-qYp" id="U8J-oA-Dmb"/>
+                        <outlet property="TemperatureCurrentLabel" destination="fjV-CY-8vd" id="n19-IZ-9Bb"/>
+                        <outlet property="TemperatureMinMaxLabel" destination="I20-KI-6gg" id="YBr-d8-vaL"/>
+                        <outlet property="WeatherImageView" destination="yFa-sX-RyH" id="AQo-5Z-Egd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UDM-sV-Qr1" userLabel="First Responder" sceneMemberID="firstResponder"/>

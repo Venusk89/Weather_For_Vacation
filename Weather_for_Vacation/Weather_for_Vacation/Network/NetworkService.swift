@@ -37,9 +37,9 @@ final class NetworkService {
                 case .success(let value):
                     do {
                         let decode = try self.decoder.decode(WeatherModel.self, from: value)
-                        print(decode)
+                        let decodeInfo: [String: WeatherModel] = ["WeatherModel": decode ]
                         
-                        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "TemperatureCurrentChanged"), object: self)
+                        NotificationCenter.default.post(name: NSNotification.Name("TemperatureCurrentChanged"), object: self, userInfo: decodeInfo)
 
                     } catch {
                         print("Error")

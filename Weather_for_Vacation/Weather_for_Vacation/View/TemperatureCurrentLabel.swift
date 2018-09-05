@@ -10,12 +10,12 @@ import UIKit
 
 class TemperatureCurrentLabel: UILabel {
     
-    var labelText: String? {
+    var labelText: String = "" {
         didSet {
             updateTitle()
         }
     }
- 
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -24,7 +24,20 @@ class TemperatureCurrentLabel: UILabel {
         super.init(coder: aDecoder)
     }
     
+    
     func updateTitle() {
-        guard let text = text else { return }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(TemperatureCurrentChanged(_:)), name: Notification.Name("TemperatureCurrentChanged"), object: nil)
+        
+        
+    }
+    
+    @objc func TemperatureCurrentChanged(_ noti: Notification) {
+        guard let info = noti.userInfo else { return }
+        guard let decode = info["WeatherModel"] as? WeatherModel else { return }
+        print("================== Noti =================")
+        print(decode.weather.hourly[0].temperature.tc)
+        
+        
     }
 }

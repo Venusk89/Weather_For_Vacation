@@ -11,10 +11,10 @@ import UIKit
 
 class TemperatureView: UIView {
     
-    @IBOutlet weak var weatherIconImageView: UIImageView!
+    @IBOutlet weak var WeatherImageView: UIImageView!
     @IBOutlet weak var backButton: UIButton!
-    @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet weak var temperatureCurrentLabel: UILabel!
     @IBOutlet weak var temperatureMinMaxLabel: UILabel!
-    @IBOutlet weak var locationNameLabel: UILabel!
-    
+    @IBOutlet weak var locationLabel: UILabel!
+
 }
